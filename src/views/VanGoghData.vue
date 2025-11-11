@@ -16,8 +16,9 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  name: 'VanGoghData',
   data() {
     return {
       comments: [],
@@ -26,10 +27,17 @@ export default {
   },
   async mounted() {
     try {
-      const res = await fetch('/data/vangogh_comments.json')
-      this.comments = await res.json()
+      const query = 'van+gogh'
+      const url = `https://api.pushshift.io/reddit/search/comment/?q=${query}&size=100`
+      const res = await axios.get(url)
+
+      this.comments = res.data.data.map(item => ({
+        text: item.body,
+        created_utc: new Date(item.created_utc * 1000),
+        subreddit: item.subreddit
+      }))
     } catch (err) {
-      console.error('Error loading JSON:', err)
+      console.error(err)
     } finally {
       this.loading = false
     }

@@ -17,11 +17,13 @@
 
 <script>
 import axios from 'axios'
+import { analyzeTextArray } from '@/utils/analyzeSentiment';
 
 export default {
   data() {
     return {
       comments: [],
+      analyzedComments: [],
       loading: true
     }
   },
@@ -36,6 +38,7 @@ export default {
         created_utc: new Date(item.created_utc * 1000),
         subreddit: item.subreddit
       }))
+      this.analyzedComments = analyzeTextArray(this.comments)
     } catch (err) {
       console.error(err)
     } finally {

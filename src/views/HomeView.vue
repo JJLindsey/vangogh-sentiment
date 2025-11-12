@@ -1,5 +1,5 @@
 <template>
-  <main class="p-8 text-center max-w-3xl mx-auto">
+  <main>
     <h1 class="text-4xl font-bold mb-4">Van Gogh Sentiment Analysis</h1>
     <p class="text-lg mb-6">
       Exploring how public and historical sentiment toward Vincent van Gogh has evolved

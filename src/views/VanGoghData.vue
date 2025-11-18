@@ -19,19 +19,49 @@
         </div>
       </div>
     </header>
-
-
     <div v-if="loading" class="text-center py-12">
       <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
       <p class="text-lg mt-4">Loading data...</p>
     </div>
 
-    <div v-else class="space-y-8">
+    <div v-else class="container">
       <div v-if="showMethodology" class="methodology-modal">
         <div class="modal-header">
           <h3 class="modal-title">Data Sources & Methodology</h3>
           <button @click="showMethodology = false" class="close-button">X</button>
         </div>
+        <div class="modal-content">
+          <div class="methodology-section">
+            <h4 class="section-title">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+              </svg>
+              Art Historical Data
+            </h4>
+            <ul class="methodology-list">
+              <li>Exhibition catalogs (MoMA, Van Gogh Museum, Metropolitan Museum)</li>
+              <li>Academic journals: <em>Burlington Magazine</em>, <em>Art Bulletin</em>, <em>Van Gogh Studies</em></li>
+              <li>Auction records (Christie's, Sotheby's)</li>
+              <li>Museum acquisition records</li>
+              <li>Google Scholar publication counts (estimated)</li>
+            </ul>
+          </div>
+          <div class="methodology-section">
+            <h4 class="section-title">
+              <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+              </svg>
+              Public Sentiment Data
+            </h4>
+            <ul class="methodology-list">
+              <li>Historical popularity tracking (1980-2025)</li>
+              <li>Google Trends data (2004-present)</li>
+              <li>Auction price indices and market analysis</li>
+              <li>Exhibition frequency and attendance records</li>
+              <li>Brand collaboration data: Van Gogh Museum official sources</li>
+            </ul>
+          </div>
+      </div>
       </div>
       <!-- Summary Stats -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4">

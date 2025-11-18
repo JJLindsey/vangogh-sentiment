@@ -27,6 +27,12 @@ a:hover {
   text-decoration: underline;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+}
+
 button, .button {
   background: var(--accent-color);
   color: #fff;
@@ -38,3 +44,121 @@ button, .button {
 button:hover, .button:hover {
   background: #d7ab27;
 }
+
+.btn-secondary {
+  background: var(--gray-100);
+  color: var(--accent-color);
+}
+
+.btn-secondary:hover {
+  background: var(--gray-200);
+}
+
+.btn-close {
+  background: transparent;
+  color: currentColor;
+  padding: 0.25rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  border-radius: var(--radius-sm);
+}
+
+.btn-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: none;
+  box-shadow: none;
+}
+
+.dashboard-header {
+  background: white;
+  border-bottom: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+  padding: var(--spacing-xl) 0;
+}
+
+.header-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--spacing-xl);
+}
+
+.main-title {
+  font-size: 1.875rem;
+  margin-bottom: var(--spacing-sm);
+  color: var(--primary-color);
+}
+
+.subtitle {
+  color: var(--gray-600);
+  font-size: 0.875rem;
+  margin: 0;
+}
+/* Modal*/
+.methodology-modal {
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  margin-top: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.modal-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: var(--spacing-lg) var(--spacing-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title {
+  color: white;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.modal-content {
+  padding: var(--spacing-xl);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-xl);
+}
+
+.methodology-section {
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  color: var(--primary-color);
+  font-size: 1rem;
+  margin-bottom: var(--spacing-md);
+}
+
+.methodology-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.methodology-list li {
+  padding: var(--spacing-sm) 0;
+  font-size: 0.875rem;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.methodology-list li::before {
+  content: "•";
+  color: var(--accent-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-right: var(--spacing-sm);
+}
+

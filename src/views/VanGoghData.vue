@@ -1,9 +1,25 @@
 <template>
   <div class="p-6 max-w-7xl mx-auto bg-gray-50 min-h-screen">
-    <header class="mb-8">
-      <h1 class="text-4xl font-bold mb-2">Van Gogh: Public Sentiment vs Art Historical Reception</h1>
-      <p class="text-gray-600">A comparative analysis of popular culture commercialization and academic scholarship</p>
+    <header class="dashboard-header mb-8">
+      <div class="container">
+        <div class="header-content">
+          <div>
+          <h1 class="main-title">Van Gogh: Public Sentiment vs Art Historical Reception</h1>
+          <p class="sub-title">A comparative analysis of popular culture commercialization and academic scholarship</p>
+          </div>
+          <button
+              @click="showMethodology = !showMethodology"
+              class="btn-secondary"
+          >
+            <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+              Methodology
+          </button>
+        </div>
+      </div>
     </header>
+
 
     <div v-if="loading" class="text-center py-12">
       <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
@@ -11,6 +27,12 @@
     </div>
 
     <div v-else class="space-y-8">
+      <div v-if="showMethodology" class="methodology-modal">
+        <div class="modal-header">
+          <h3 class="modal-title">Data Sources & Methodology</h3>
+          <button @click="showMethodology = false" class="close-button">X</button>
+        </div>
+      </div>
       <!-- Summary Stats -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
         <div class="p-4 bg-white rounded-lg shadow">
@@ -212,7 +234,8 @@ export default {
       brandCollabs: [],
       commercialEvents: [],
       commercializationScores: {},
-      loading: true
+      loading: true,
+      showMethodology: false
     }
   },
   computed: {

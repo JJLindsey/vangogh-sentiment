@@ -176,7 +176,89 @@
                   </div>
                 </div>
               </div>
+               <!-- Commercialization Section -->
+              <div class="content-card commercialization-card">
+                <h3 class="card-title">Commercialization as Cultural Indicator</h3>
+                <p class="card-text">
+                  The recent brand collaborations (2021-2024) represent a significant development in art historical
+                  terms. The Van Gogh Museum's partnerships with LEGO, Pokémon, Samsung, and streetwear brands
+                  signal institutional acceptance of popular culture as a legitimate channel for art engagement.
+                  This shift raises critical questions:
+                </p>
+                <div class="questions-list">
+                  <div class="question-item">
+                    <h4 class="question-title">Accessibility vs. Commodification</h4>
+                    <p class="question-text">Do these partnerships democratize art appreciation or reduce masterworks to consumer products?</p>
+                  </div>
+                  <div class="question-item">
+                    <h4 class="question-title">Generational Engagement</h4>
+                    <p class="question-text">The Pokémon collaboration particularly demonstrates strategic targeting of younger demographics typically disengaged from traditional museum spaces.</p>
+                  </div>
+                  <div class="question-item">
+                    <h4 class="question-title">Economic Sustainability</h4>
+                    <p class="question-text">Museum partnerships generate revenue while maintaining some curatorial control over brand image.</p>
+                  </div>
+                  <div class="question-item">
+                    <h4 class="question-title">Cultural Capital</h4>
+                    <p class="question-text">Van Gogh's works maintain high cultural prestige even while appearing on mass-market products, suggesting his canonical status is now unassailable.</p>
+                  </div>
+                </div>
+              </div>
             </section>
+          </div>
+
+          <!-- Tableau Tab -->
+            <div v-if="activeTab === 'tableau'" class="tab-panel">
+            <div class="info-banner">
+              <p>
+                <strong>Interactive Dashboard:</strong> Explore the complete comparative analysis through
+                interactive visualizations. Click, filter, and hover to discover patterns in the data.
+              </p>
+            </div>
+
+            <!-- Tableau Embed -->
+            <div class="tableau-container">
+              <div class="tableau-header">
+                <h3 class="tableau-title">
+                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                  Tableau Public Dashboard
+                </h3>
+                <a
+                  href="#"
+                  target="_blank"
+                  class="tableau-link"
+                >
+                  Open in Tableau
+                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                  </svg>
+                </a>
+              </div>
+
+              <!-- Tableau iframe -->
+              <div v-if="tableauUrl" class="tableau-embed">
+                <iframe
+                  :src="tableauUrl"
+                  width="100%"
+                  height="800"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+              </div>
+              <div v-else class="tableau-placeholder">
+                <div class="placeholder-content">
+                  <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                  </svg>
+                  <p class="placeholder-title">Add Tableau Dashboard</p>
+                  <p class="placeholder-text">
+                    <code>tableauUrl</code>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
             <!-- Brand Collaborations Analysis -->
             <div class="p-6 bg-white rounded-lg shadow">
@@ -360,7 +442,8 @@ export default {
       commercialEvents: [],
       commercializationScores: {},
       loading: true,
-      showMethodology: false
+      showMethodology: false,
+      tableauUrl: ''
     }
   },
   computed: {

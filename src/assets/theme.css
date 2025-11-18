@@ -304,7 +304,45 @@ button:hover, .button:hover {
 .tab-content {
   padding: var(--spacing-xl);
 }
+/*content cards*/
+.content-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid var(--gray-200);
+  box-shadow: var(--shadow-sm);
+}
 
+.timeline-card {
+  background: linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%);
+  border-color: #bfdbfe;
+}
+
+.commercialization-card {
+  background: linear-gradient(135deg, #fcfbe7 0%, #fff8e8 100%);
+  border-color: #fbf9cf;
+}
+
+.insight-card {
+  background: linear-gradient(135deg, #c7fef2 0%, #8afdd3 100%);
+  border-color: #47fdb1;
+}
+
+.card-title {
+  font-size: 1.125rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing-md);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.card-text {
+  color: var(--gray-700);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+}
 /* timeline*/
 .timeline-grid {
   display: grid;
@@ -335,4 +373,22 @@ button:hover, .button:hover {
   color: var(--gray-700);
   margin: 0;
   line-height: 1.6;
+}
+/*Tableau section*/
+.placeholder-content {
+  text-align: center;
+  max-width: 500px;
+}
+
+.placeholder-icon {
+  width: 4rem;
+  height: 4rem;
+  color: var(--gray-300);
+  margin: 0 auto var(--spacing-lg);
+}
+
+.placeholder-title {
+  color: var(--gray-600);
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
 }

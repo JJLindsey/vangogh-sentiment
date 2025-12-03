@@ -91,7 +91,7 @@
             <p class="metric-value metric-value-teal">{{ currentHistoricalRating }}</p>
             <p class="metric-description">Art historical consensus 2024</p>
           </div>
-
+          <!-- Brand card-->
           <div class="metric-card">
             <div class="metric-header">
               <div class="metric-icon metric-icon-accent">

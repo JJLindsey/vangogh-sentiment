@@ -138,7 +138,8 @@ export function getBrandCollaborations() {
       description: 'Official LEGO set recreating Starry Night',
       ageGroup: 'All ages',
       pricePoint: 'Premium ($169.99)',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: 'lego.png'
     },
     {
       partner: 'Pokémon',
@@ -152,7 +153,8 @@ export function getBrandCollaborations() {
       ageGroup: 'Children & Young Adults',
       pricePoint: 'Various',
       virality: 'Extremely high - sold out immediately',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: 'pokemon.png'
     },
     {
       partner: 'CARIUMA',
@@ -165,7 +167,8 @@ export function getBrandCollaborations() {
       description: 'Sustainable sneakers featuring Van Gogh artworks',
       ageGroup: 'Young Adults',
       pricePoint: 'Mid-range ($89-129)',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: 'cariuma.png'
     },
     {
       partner: 'Samsung',
@@ -178,7 +181,8 @@ export function getBrandCollaborations() {
       description: 'Digital art displays featuring Van Gogh works',
       ageGroup: 'Adults',
       pricePoint: 'Premium (Hardware + subscription)',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: 'samsung.png'
     },
     {
       partner: 'BorderLeap',
@@ -191,7 +195,8 @@ export function getBrandCollaborations() {
       description: 'Augmented reality Van Gogh experiences',
       ageGroup: 'All ages',
       pricePoint: 'Freemium',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: ''
     },
     {
       partner: 'Moleskine',
@@ -204,7 +209,8 @@ export function getBrandCollaborations() {
       description: 'Limited edition notebooks featuring Van Gogh art',
       ageGroup: 'Adults & Students',
       pricePoint: 'Mid-range ($20-40)',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: 'moleskine.png'
     },
     {
       partner: 'BE@RBRICK',
@@ -217,7 +223,8 @@ export function getBrandCollaborations() {
       description: 'Designer vinyl figures with Van Gogh artworks',
       ageGroup: 'Adult collectors',
       pricePoint: 'Premium ($50-200)',
-      source: 'vangoghmuseum.nl'
+      source: 'vangoghmuseum.nl',
+      logoFile: 'bearbrick.png'
     },
     {
       partner: 'Daily Paper',
@@ -231,6 +238,20 @@ export function getBrandCollaborations() {
       ageGroup: 'Young Adults',
       pricePoint: 'Mid-Premium ($60-200)',
       source: 'vangoghmuseum.nl'
+    },
+    {
+      partner: 'Pop Mart',
+      year: 2024,
+      launchDate: '2024',
+      category: 'Collectibles',
+      products: ['Van Gogh Museum x Pop Mart MEGA ROYAL MOLLY Almond Blossom edition'],
+      estimatedReach: 'Global - Collectible toy market',
+      culturalImpact: 'High',
+      description: 'Iconic collectible character figures featuring Van Gogh artworks',
+      ageGroup: 'All ages',
+      pricePoint: 'Premium ($300+)',
+      source: 'vangoghmuseum.nl',
+      logoFile: 'popmart.png'
     }
   ];
 }

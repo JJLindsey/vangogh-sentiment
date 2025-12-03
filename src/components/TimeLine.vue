@@ -1,5 +1,8 @@
 <template>
-  <div> <h4>Time Line of Brand Collaborations</h4></div>
+  <div>
+    <h4>Time Line of Brand Collaborations with Van Gogh Museum</h4>
+    <h6>Official museum partnerships and commercial events involving Van Gogh's art over the years - not exhaustive list.</h6>
+  </div>
   <div class="time-line">
     <div
       v-for="(brand, index) in sorted"
@@ -88,11 +91,6 @@ const sorted = getBrandCollaborations()
   margin-bottom: 2rem;
   position: relative;
 }
-  /* .time-line-item-right .time-line-content {
-  order: -1;
-  text-align: left;
-  flex-direction: row-reverse;
-} */
 .time-line-item-left {
   flex-direction: row-reverse;
   text-align: right;
@@ -112,14 +110,6 @@ const sorted = getBrandCollaborations()
   text-align: right;
   padding-top: 0.5rem;
   }
-
-/* .timeline-divider {
-  position: relative;
-  width: 40px;
-  display: flex;
-  justify-content: center;
-  z-index: 2;
-} */
 .time-line-dot {
   width: 24px;
   height: 24px;

@@ -300,7 +300,28 @@ export function getHistoricalCommercialData() {
       event: 'Van Gogh Museum Pokémon collaboration',
       impact: 'Viral phenomenon',
       reach: 'Global gaming community'
-    }
+    },
+    {
+  year: 2021,
+  type: 'Experience',
+  event: 'Van Gogh Alive (Grande Experiences) expansion',
+  impact: 'Very High',
+  reach: 'Global touring'
+},
+{
+  year: 2022,
+  type: 'Experience',
+  event: 'Beyond Van Gogh: Immersive Experience',
+  impact: 'Extremely High',
+  reach: '40+ cities'
+},
+{
+  year: 2023,
+  type: 'Experience',
+  event: 'Van Gogh: The Immersive Experience (Exhibition Hub)',
+  impact: 'Extremely High',
+  reach: 'Millions of visitors'
+}
   ];
 }
 

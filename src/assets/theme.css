@@ -309,6 +309,7 @@ button:hover, .button:hover {
 }
 /*content cards*/
 .content-card {
+  display: block;
   background: white;
   border-radius: var(--radius-lg);
   padding: var(--spacing-xl);

@@ -267,6 +267,13 @@ export function getHistoricalCommercialData() {
       reach: 'Cinematic'
     },
     {
+      year: 2008,
+      type: 'Experience',
+      event: 'Imagine Van Gogh:The Immersive Exhibition',
+      impact: 'High',
+      reach: 'Millions of visitors'
+    },
+    {
       year: 2010,
       type: 'Museum merchandise',
       event: 'Major expansion of museum shops worldwide',
@@ -283,7 +290,7 @@ export function getHistoricalCommercialData() {
     {
       year: 2020,
       type: 'Experience',
-      event: 'Immersive Van Gogh exhibitions begin worldwide tour',
+      event: 'Immersive Van Gogh exhibitions',
       impact: 'Extremely High',
       reach: 'Global - millions of visitors'
     },
@@ -295,6 +302,20 @@ export function getHistoricalCommercialData() {
       reach: 'Global retail'
     },
     {
+      year: 2021,
+      type: 'Experience',
+      event: 'Van Gogh Alive (Grande Experiences) expansion',
+      impact: 'Very High',
+      reach: 'Global touring'
+    },
+    {
+      year: 2022,
+      type: 'Experience',
+      event: 'Beyond Van Gogh: Immersive Experience',
+      impact: 'Extremely High',
+      reach: '40+ cities'
+    },
+    {
       year: 2023,
       type: 'Gaming',
       event: 'Van Gogh Museum Pokémon collaboration',
@@ -302,26 +323,12 @@ export function getHistoricalCommercialData() {
       reach: 'Global gaming community'
     },
     {
-  year: 2021,
-  type: 'Experience',
-  event: 'Van Gogh Alive (Grande Experiences) expansion',
-  impact: 'Very High',
-  reach: 'Global touring'
-},
-{
-  year: 2022,
-  type: 'Experience',
-  event: 'Beyond Van Gogh: Immersive Experience',
-  impact: 'Extremely High',
-  reach: '40+ cities'
-},
-{
-  year: 2023,
-  type: 'Experience',
-  event: 'Van Gogh: The Immersive Experience (Exhibition Hub)',
-  impact: 'Extremely High',
-  reach: 'Millions of visitors'
-}
+      year: 2017,
+      type: 'Experience',
+      event: 'Van Gogh: The Immersive Experience (Exhibition Hub)',
+      impact: 'Extremely High',
+      reach: 'Global - Millions of visitors'
+    }
   ];
 }
 

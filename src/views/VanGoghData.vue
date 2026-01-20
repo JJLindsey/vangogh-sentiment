@@ -206,14 +206,19 @@
                 </div>
               </div>
               <!--Time Line-->
-              <div class="card-contnet">
+              <div class="content-card">
                 <Timeline />
               </div>
                <!-- Brand Logos-->
                <div class="content-card">
                 <LogoGrid />
                </div>
-
+              <div class="card-title">
+                  <h3>Commercial Data</h3>
+              </div>
+               <div class="content-card">
+                <SunflowerCluster />
+               </div>
             </section>
           </div>
 
@@ -436,7 +441,8 @@ import SentimentLineChart from '@/components/SentimentLineChart.vue';
 import ComparisonChart from '@/components/ComparisonChart.vue';
 import BrandCollaborationChart from '@/components/BrandCollaborationChart.vue';
 import LogoGrid from '@/components/LogoGrid.vue';
-import Timeline from '@/components/Timeline.vue';
+import Timeline from '@/components/TimeLine.vue';
+import SunflowerCluster from '@/components/SunflowerCluster.vue';
 
 export default {
   components: {
@@ -446,6 +452,7 @@ export default {
     BrandCollaborationChart,
     Timeline,
     LogoGrid,
+    SunflowerCluster
   },
   data() {
     return {

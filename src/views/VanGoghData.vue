@@ -137,7 +137,7 @@
               @click="activeTab = 'exports'"
               :class="['tab-button', { active: activeTab === 'exports' }]"
             >
-              Data Exports
+              Data & Sources
             </button>
         </div>
         <div class="tab-content">
@@ -223,7 +223,7 @@
           </div>
 
           <!-- Tableau Tab -->
-            <div v-if="activeTab === 'tableau'" class="tab-panel">
+          <div v-if="activeTab === 'tableau'" class="tab-panel">
             <div class="info-banner">
               <p>
                 <strong>Interactive Dashboard:</strong> Explore the complete comparative analysis through
@@ -274,6 +274,10 @@
                 </div>
               </div>
             </div>
+          </div>
+          <!-- Data tab-->
+          <div v-if="activeTab === 'exports'" class="tab-panel">
+
           </div>
             <!-- Brand Collaborations Analysis -->
             <div class="p-6 bg-white rounded-lg shadow">
@@ -331,7 +335,7 @@
                   </ul>
                 </div>
 
-                <div>
+                <!-- <div>
                   <h3 class="font-semibold text-lg mb-2">Commercialization as Cultural Indicator</h3>
                   <p class="text-sm leading-relaxed">
                     The recent brand collaborations (2021-2024) represent a significant development in art historical
@@ -349,7 +353,7 @@
                     <li><strong>Cultural Capital:</strong> Van Gogh's works maintain high cultural prestige even while
                     appearing on mass-market products, suggesting his canonical status is now unassailable.</li>
                   </ul>
-                </div>
+                </div> -->
 
                 <div>
                   <h3 class="font-semibold text-lg mb-2">Divergence Between Academic and Popular Reception</h3>
@@ -436,10 +440,10 @@ import {
   getHistoricalCommercialData,
   calculateCommercializationScore
 } from '@/utils/artHistoricalData';
-import SentimentLineChart from '@/components/SentimentLineChart.vue';
+import SentimentLineChart from '@/components/charts/SentimentLineChart.vue';
 //import HistoricalReceptionChart from '@/components/HistoricalReceptionChart.vue';
-import ComparisonChart from '@/components/ComparisonChart.vue';
-import BrandCollaborationChart from '@/components/BrandCollaborationChart.vue';
+import ComparisonChart from '@/components/charts/ComparisonChart.vue';
+import BrandCollaborationChart from '@/components/charts/BrandCollaborationChart.vue';
 import LogoGrid from '@/components/LogoGrid.vue';
 import Timeline from '@/components/TimeLine.vue';
 import SunflowerCluster from '@/components/SunflowerCluster.vue';

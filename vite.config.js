@@ -12,6 +12,7 @@ export default defineConfig({
     vueJsx(),
     vueDevTools(),
   ],
+  base: "vangogh-sentiment",
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

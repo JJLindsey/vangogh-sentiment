@@ -16,7 +16,7 @@
         Tableau Public Dashboard
       </h3>
       <a
-        href="#"
+        :href="tableauUrl"
         target="_blank"
         class="tableau-link"
       >
@@ -27,15 +27,16 @@
       </a>
     </div>
     <!-- Tableau iframe -->
-    <div v-if="tableauUrl" class="tableau-embed">
+    <div v-if="tableauUrl">
+      <div style="position: relative; width: 100%; padding-bottom: 81%;">
       <iframe
         :src="tableauUrl"
-        width="100%"
-        :height="height"
+        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
         frameborder="0"
         allowfullscreen
-        scrolling="no"
+        scrolling="yes"
       ></iframe>
+      </div>
     </div>
     <div v-else class="tableau-placeholder">
       <div class="placeholder-content">
@@ -54,7 +55,7 @@
   export default {
     props: {
       tableauUrl: { type: String, default: '' },
-      height: { type: Number, default: 900 }
+      height: { type: String, default: '900px' }
     }
   }
 </script>

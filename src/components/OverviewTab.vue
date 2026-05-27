@@ -61,6 +61,8 @@
           </div>
         </div>
       </div>
+      <!-- Historical Reception-->
+       <HistoricalReceptionChart :historicalData="historicalData"/>
       <!-- Brand Collaborations Analysis -->
             <div class="p-6 bg-white rounded-lg shadow">
               <h2 class="text-2xl font-semibold mb-4">Commercialization & Popular Culture Impact</h2>
@@ -90,12 +92,14 @@
   import LogoGrid from '@/components/LogoGrid.vue'
   import SunflowerCluster from '@/components/SunflowerCluster.vue'
   import BrandCollaborationChart from './charts/BrandCollaborationChart.vue';
+  import HistoricalReceptionChart from './charts/HistoricalReceptionChart.vue';
 
   export default {
-    components: { Timeline, LogoGrid, SunflowerCluster, BrandCollaborationChart },
+    components: { Timeline, LogoGrid, SunflowerCluster, BrandCollaborationChart, HistoricalReceptionChart },
     props: {
       brandCollabs: { type: Array, default: () => [] },
-      commercialEvents: { type: Array, default: () => [] }
+      commercialEvents: { type: Array, default: () => [] },
+      historicalData: { type: Array, default: () => [], required: true }
     }
   }
 </script>

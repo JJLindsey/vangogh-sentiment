@@ -146,143 +146,18 @@
             <OverviewTab
               :brandCollabs="brandCollabs"
               :commercialEvents="commercialEvents"
+              :historicalData="historicalData"
             />
           </div>
 
           <!-- Tableau Tab -->
           <div v-if="activeTab === 'tableau'" class="tab-panel">
-            <VisualizationsTab :tableau-url="tableauUrl"/>
+            <VisualizationsTab :tableau-url="tableauUrl"  height="900px"/>
           </div>
           <!-- Data tab-->
           <div v-if="activeTab === 'exports'" class="tab-panel">
-
+            <DataTab />
           </div>
-            <!-- Brand Collaborations Analysis -->
-            <!-- <div class="p-6 bg-white rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Commercialization & Popular Culture Impact</h2>
-              <BrandCollaborationChart
-                :brandCollabs="brandCollabs"
-                :commercialEvents="commercialEvents"
-              />
-            </div> -->
-
-            <!-- Art Historical Reception Chart -->
-            <div class="p-6 bg-white rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Art Historical Reception (1920-2024)</h2>
-              <p class="text-sm text-gray-600 mb-4">
-                Based on exhibition records, academic publications, museum acquisitions, and auction data
-              </p>
-              <HistoricalReceptionChart :historicalData="historicalData" />
-            </div>
-
-            <!-- Public Sentiment Chart -->
-            <!-- <div class="p-6 bg-white rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Public Sentiment Analysis (2020-2025)</h2>
-              <p class="text-sm text-gray-600 mb-4">
-                Simulated social media sentiment from Reddit, Twitter, Instagram, and museum reviews
-              </p>
-              <SentimentLineChart :analyzedComments="analyzedComments" />
-            </div> -->
-
-            <!-- Comparison Chart -->
-            <!-- <div class="p-6 bg-white rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Comparative Analysis</h2>
-              <ComparisonChart
-                :sentimentData="analyzedComments"
-                :historicalData="historicalData"
-                :commercializationData="commercializationScores"
-              />
-            </div> -->
-
-            <!-- Art Historian's Analysis -->
-            <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Art Historical Analysis</h2>
-              <div class="space-y-4 text-gray-800">
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Reception Timeline</h3>
-                  <p class="text-sm leading-relaxed">
-                    Van Gogh's art historical reception shows steady growth from modest post-mortem recognition
-                    in the 1920s (0.35) to near-universal acclaim by 2024 (0.96). This trajectory reflects the
-                    canonization process typical of Post-Impressionist artists, with acceleration points at:
-                  </p>
-                  <ul class="list-disc list-inside text-sm mt-2 space-y-1 ml-4">
-                    <li>1950s: Post-war cultural renaissance and biographical film "Lust for Life" (1956)</li>
-                    <li>1973: Establishment of Van Gogh Museum in Amsterdam</li>
-                    <li>1987-1990: Record-breaking auction prices establishing financial canonization</li>
-                    <li>2017-present: Immersive experiences and brand partnerships democratizing access</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Divergence Between Academic and Popular Reception</h3>
-                  <p class="text-sm leading-relaxed">
-                    While academic reception plateaued around 2000 (having reached near-consensus), popular cultural
-                    engagement has accelerated exponentially. This suggests a bifurcation in how Van Gogh functions
-                    culturally: as a closed subject of art historical inquiry versus an endlessly renewable popular icon.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Data Sources -->
-            <div class="p-6 bg-white rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Data Sources & Methodology</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div>
-                  <h3 class="font-semibold mb-2">Art Historical Data</h3>
-                  <ul class="space-y-1 text-gray-700">
-                    <li>Exhibition catalogs (MoMA, Van Gogh Museum, Metropolitan Museum)</li>
-                    <li>Academic journals: <em>Burlington Magazine</em>, <em>Art Bulletin</em>, <em>Van Gogh Studies</em></li>
-                    <li>Auction records (Christie's, Sotheby's)</li>
-                    <li>Museum acquisition records</li>
-                    <li>Google Scholar publication counts (estimated)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-2">Public Sentiment Data</h3>
-                  <ul class="space-y-1 text-gray-700">
-                    <li>Simulated social media comments (Reddit, Twitter, Instagram)</li>
-                    <li>Museum visitor reviews (aggregated patterns)</li>
-                    <li>Sentiment analysis using natural language processing</li>
-                    <li>Brand collaboration data: <a href="https://www.vangoghmuseum.nl" class="text-blue-600 hover:underline" target="_blank">Van Gogh Museum official sources</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <!-- Export for Tableau -->
-            <div class="p-6 bg-white rounded-lg shadow">
-              <h3 class="text-xl font-semibold mb-3">Export Data for Tableau Analysis</h3>
-              <p class="text-sm text-gray-600 mb-4">
-                Download comprehensive datasets for further visualization and analysis in Tableau Desktop or Tableau Public
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <button
-                  @click="exportSentimentData"
-                  class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Export Sentiment Data
-                </button>
-                <button
-                  @click="exportHistoricalData"
-                  class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  Export Historical Reception
-                </button>
-                <button
-                  @click="exportBrandCollabs"
-                  class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                >
-                  Export Brand Collaborations
-                </button>
-                <button
-                  @click="exportAllData"
-                  class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
-                >
-                  Export Complete Dataset
-                </button>
-              </div>
-            </div>
         </div>
       </div>
     </div>
@@ -297,21 +172,16 @@ import {
   getHistoricalCommercialData,
   calculateCommercializationScore
 } from '@/utils/artHistoricalData';
-//import SentimentLineChart from '@/components/charts/SentimentLineChart.vue';
-//import HistoricalReceptionChart from '@/components/HistoricalReceptionChart.vue';
-//import ComparisonChart from '@/components/charts/ComparisonChart.vue';
-//import BrandCollaborationChart from '@/components/charts/BrandCollaborationChart.vue';
+
 import OverviewTab from '@/components/OverviewTab.vue';
 import VisualizationsTab from '@/components/VisualizationsTab.vue';
+import DataTab from '@/components/DataTab.vue';
 
 export default {
   components: {
-    //SentimentLineChart,
-    //HistoricalReceptionChart,
-    //ComparisonChart,
-    //BrandCollaborationChart,
     OverviewTab,
-    VisualizationsTab
+    VisualizationsTab,
+    DataTab
   },
   data() {
     return {
@@ -323,7 +193,7 @@ export default {
       commercializationScores: {},
       loading: true,
       showMethodology: false,
-      tableauUrl: 'https://public.tableau.com/views/VanGoghinPopCulture/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes'
+      tableauUrl: 'https://public.tableau.com/views/VanGoghinPopCulture/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes&:size=y&:device=desktop'
     }
   },
   computed: {

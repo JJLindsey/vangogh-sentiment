@@ -2,24 +2,6 @@
   <div>
     <div class="mb-6">
       <h3 class="text-lg font-semibold mb-3">Official Van Gogh Museum Brand Partnerships</h3>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
-        <div
-          v-for="collab in brandCollabs"
-          :key="collab.partner"
-          class="p-3 border rounded-lg hover:shadow-md transition-shadow cursor-pointer"
-          :class="getCategoryColor(collab.category)"
-        >
-          <h4 class="font-semibold text-sm">{{ collab.partner }}</h4>
-          <p class="text-xs text-gray-600">{{ collab.category }}</p>
-          <p class="text-xs text-gray-500 mt-1">{{ collab.year }}</p>
-          <span
-            class="text-xs px-2 py-1 rounded mt-2 inline-block"
-            :class="getImpactBadge(collab.culturalImpact)"
-          >
-            {{ collab.culturalImpact }} Impact
-          </span>
-        </div>
-      </div>
     </div>
 
     <BarChart :data="chartData" :options="chartOptions" />

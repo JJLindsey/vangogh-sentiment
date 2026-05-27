@@ -44,3 +44,22 @@ Normalized 50+ points of official partnership data from the Van Gogh Museum into
 #### 2. Scalable Mock API Integration
 **Challenge:** Simulating a production environment without a live database.
 **Solution:** Architected a **Decoupled Service Pattern**. By exporting data through structured functions like `calculateCommercializationScore()`, the frontend remains agnostic of the data source, allowing for a seamless future migration to a REST or GraphQL API.
+
+#### Screenshots
+<img 
+  src="./src/assets/images/mainDashboardView.png" 
+  alt="Dashboard" 
+  width="300"
+/>
+<img 
+  src="./src/assets/images/tableauTab.png" 
+  alt="Tableau tab" 
+  width="300"
+/>
+<img 
+  src="./src/assets/images/overviewTab.png" 
+  alt="overview tab" 
+  width="300"
+/>
+
+© Jennifer Lindsey. All rights reserved.

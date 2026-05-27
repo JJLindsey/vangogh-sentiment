@@ -61,6 +61,14 @@
           </div>
         </div>
       </div>
+      <!-- Brand Collaborations Analysis -->
+            <div class="p-6 bg-white rounded-lg shadow">
+              <h2 class="text-2xl font-semibold mb-4">Commercialization & Popular Culture Impact</h2>
+              <BrandCollaborationChart
+                :brandCollabs="brandCollabs"
+                :commercialEvents="commercialEvents"
+              />
+            </div>
       <!--Time Line-->
       <div class="content-card">
         <Timeline />
@@ -81,8 +89,13 @@
   import Timeline from '@/components/TimeLine.vue'
   import LogoGrid from '@/components/LogoGrid.vue'
   import SunflowerCluster from '@/components/SunflowerCluster.vue'
+  import BrandCollaborationChart from './charts/BrandCollaborationChart.vue';
 
   export default {
-    components: { Timeline, LogoGrid, SunflowerCluster }
+    components: { Timeline, LogoGrid, SunflowerCluster, BrandCollaborationChart },
+    props: {
+      brandCollabs: { type: Array, default: () => [] },
+      commercialEvents: { type: Array, default: () => [] }
+    }
   }
 </script>

@@ -131,86 +131,40 @@
               @click="activeTab = 'tableau'"
               :class="['tab-button', { active: activeTab === 'tableau' }]"
             >
-              Interactive Visualizations
+              Visualizations
             </button>
             <button
               @click="activeTab = 'exports'"
               :class="['tab-button', { active: activeTab === 'exports' }]"
             >
-              Data & Sources
+              Data & Analysis
             </button>
         </div>
         <div class="tab-content">
           <!-- Overview Tab -->
           <div v-if="activeTab === 'overview'" class="tab-panel">
-            <OverviewTab />
+            <OverviewTab
+              :brandCollabs="brandCollabs"
+              :commercialEvents="commercialEvents"
+            />
           </div>
 
           <!-- Tableau Tab -->
           <div v-if="activeTab === 'tableau'" class="tab-panel">
-            <div class="info-banner">
-              <p>
-                <strong>Interactive Dashboard:</strong> Explore the complete comparative analysis through
-                interactive visualizations. Click, filter, and hover to discover patterns in the data.
-              </p>
-            </div>
-
-            <!-- Tableau Embed -->
-            <div class="tableau-container">
-              <div class="tableau-header">
-                <h3 class="tableau-title">
-                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                  </svg>
-                  Tableau Public Dashboard
-                </h3>
-                <a
-                  href="#"
-                  target="_blank"
-                  class="tableau-link"
-                >
-                  Open in Tableau
-                  <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                  </svg>
-                </a>
-              </div>
-
-              <!-- Tableau iframe -->
-              <div v-if="tableauUrl" class="tableau-embed">
-                <iframe
-                  :src="tableauUrl"
-                  width="100%"
-                  height="800"
-                  frameborder="0"
-                  allowfullscreen
-                ></iframe>
-              </div>
-              <div v-else class="tableau-placeholder">
-                <div class="placeholder-content">
-                  <svg class="placeholder-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
-                  </svg>
-                  <p class="placeholder-title">Add Tableau Dashboard</p>
-                  <p class="placeholder-text">
-                    <code>tableauUrl</code>
-                  </p>
-                </div>
-              </div>
-            </div>
+            <VisualizationsTab :tableau-url="tableauUrl"/>
           </div>
           <!-- Data tab-->
           <div v-if="activeTab === 'exports'" class="tab-panel">
 
           </div>
             <!-- Brand Collaborations Analysis -->
-            <div class="p-6 bg-white rounded-lg shadow">
+            <!-- <div class="p-6 bg-white rounded-lg shadow">
               <h2 class="text-2xl font-semibold mb-4">Commercialization & Popular Culture Impact</h2>
               <BrandCollaborationChart
                 :brandCollabs="brandCollabs"
                 :commercialEvents="commercialEvents"
               />
-            </div>
+            </div> -->
 
             <!-- Art Historical Reception Chart -->
             <div class="p-6 bg-white rounded-lg shadow">
@@ -222,23 +176,23 @@
             </div>
 
             <!-- Public Sentiment Chart -->
-            <div class="p-6 bg-white rounded-lg shadow">
+            <!-- <div class="p-6 bg-white rounded-lg shadow">
               <h2 class="text-2xl font-semibold mb-4">Public Sentiment Analysis (2020-2025)</h2>
               <p class="text-sm text-gray-600 mb-4">
                 Simulated social media sentiment from Reddit, Twitter, Instagram, and museum reviews
               </p>
               <SentimentLineChart :analyzedComments="analyzedComments" />
-            </div>
+            </div> -->
 
             <!-- Comparison Chart -->
-            <div class="p-6 bg-white rounded-lg shadow">
+            <!-- <div class="p-6 bg-white rounded-lg shadow">
               <h2 class="text-2xl font-semibold mb-4">Comparative Analysis</h2>
               <ComparisonChart
                 :sentimentData="analyzedComments"
                 :historicalData="historicalData"
                 :commercializationData="commercializationScores"
               />
-            </div>
+            </div> -->
 
             <!-- Art Historian's Analysis -->
             <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg shadow">
@@ -258,26 +212,6 @@
                     <li>2017-present: Immersive experiences and brand partnerships democratizing access</li>
                   </ul>
                 </div>
-
-                <!-- <div>
-                  <h3 class="font-semibold text-lg mb-2">Commercialization as Cultural Indicator</h3>
-                  <p class="text-sm leading-relaxed">
-                    The recent brand collaborations (2021-2024) represent a significant development in art historical
-                    terms. The Van Gogh Museum's partnerships with LEGO, Pokémon, Samsung, and streetwear brands
-                    signal institutional acceptance of popular culture as a legitimate channel for art engagement.
-                    This shift raises critical questions:
-                  </p>
-                  <ul class="list-disc list-inside text-sm mt-2 space-y-1 ml-4">
-                    <li><strong>Accessibility vs. Commodification:</strong> Do these partnerships democratize art appreciation
-                    or reduce masterworks to consumer products?</li>
-                    <li><strong>Generational Engagement:</strong> The Pokémon collaboration particularly demonstrates
-                    strategic targeting of younger demographics typically disengaged from traditional museum spaces.</li>
-                    <li><strong>Economic Sustainability:</strong> Museum partnerships generate revenue while maintaining
-                    some curatorial control over brand image.</li>
-                    <li><strong>Cultural Capital:</strong> Van Gogh's works maintain high cultural prestige even while
-                    appearing on mass-market products, suggesting his canonical status is now unassailable.</li>
-                  </ul>
-                </div> -->
 
                 <div>
                   <h3 class="font-semibold text-lg mb-2">Divergence Between Academic and Popular Reception</h3>
@@ -363,19 +297,21 @@ import {
   getHistoricalCommercialData,
   calculateCommercializationScore
 } from '@/utils/artHistoricalData';
-import SentimentLineChart from '@/components/charts/SentimentLineChart.vue';
+//import SentimentLineChart from '@/components/charts/SentimentLineChart.vue';
 //import HistoricalReceptionChart from '@/components/HistoricalReceptionChart.vue';
-import ComparisonChart from '@/components/charts/ComparisonChart.vue';
-import BrandCollaborationChart from '@/components/charts/BrandCollaborationChart.vue';
+//import ComparisonChart from '@/components/charts/ComparisonChart.vue';
+//import BrandCollaborationChart from '@/components/charts/BrandCollaborationChart.vue';
 import OverviewTab from '@/components/OverviewTab.vue';
+import VisualizationsTab from '@/components/VisualizationsTab.vue';
 
 export default {
   components: {
-    SentimentLineChart,
+    //SentimentLineChart,
     //HistoricalReceptionChart,
-    ComparisonChart,
-    BrandCollaborationChart,
-    OverviewTab
+    //ComparisonChart,
+    //BrandCollaborationChart,
+    OverviewTab,
+    VisualizationsTab
   },
   data() {
     return {
@@ -387,7 +323,7 @@ export default {
       commercializationScores: {},
       loading: true,
       showMethodology: false,
-      tableauUrl: ''
+      tableauUrl: 'https://public.tableau.com/views/VanGoghinPopCulture/Dashboard1?:embed=y&:showVizHome=no&:toolbar=yes'
     }
   },
   computed: {

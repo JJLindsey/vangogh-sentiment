@@ -7,6 +7,11 @@
         </svg>
         Art Historical Analysis
       </h2>
+      <div class="content-card commercialization-card">
+        <p class="card-text">
+          About this analysis: Vincent Van Gogh sold one painting in his lifetime. By 2024 his work had generated over $1.5B in auction sales, 3M+ annual museum visitors, and official brand partnerships with LEGO, Pokémon, and Samsung. This dashboard examines that trajectory quantitatively: What does 150 years of academic reception data, combined with modern social media sentiment, reveal about how cultural canonization actually works? The "Posthumous Popularity Paradox" is the gap between an artist's rejection in life and their commercial dominance in death, Van Gogh is its clearest case study.
+        </p>
+      </div>
       <div class="content-card timeline-card">
         <h3 class="card-title">Reception Timeline</h3>
         <p class="card-text">
@@ -31,6 +36,14 @@
             <div class="timeline-badge">2017-present</div>
             <p class="timeline-text">Immersive experiences and brand partnerships democratizing access</p>
           </div>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg mb-2">Divergence Between Academic and Popular Reception</h3>
+          <p class="text-sm leading-relaxed">
+            While academic reception plateaued around 2000 (having reached near-consensus), popular cultural
+            engagement has accelerated exponentially. This suggests a bifurcation in how Van Gogh functions
+            culturally: as a closed subject of art historical inquiry versus an endlessly renewable popular icon.
+          </p>
         </div>
       </div>
         <!-- Commercialization Section -->

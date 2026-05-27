@@ -1,92 +1,71 @@
 <template>
-   <!-- Art Historian's Analysis -->
-            <div class="p-6 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Art Historical Analysis</h2>
-              <div class="space-y-4 text-gray-800">
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Reception Timeline</h3>
-                  <p class="text-sm leading-relaxed">
-                    Van Gogh's art historical reception shows steady growth from modest post-mortem recognition
-                    in the 1920s (0.35) to near-universal acclaim by 2024 (0.96). This trajectory reflects the
-                    canonization process typical of Post-Impressionist artists, with acceleration points at:
-                  </p>
-                  <ul class="list-disc list-inside text-sm mt-2 space-y-1 ml-4">
-                    <li>1950s: Post-war cultural renaissance and biographical film "Lust for Life" (1956)</li>
-                    <li>1973: Establishment of Van Gogh Museum in Amsterdam</li>
-                    <li>1987-1990: Record-breaking auction prices establishing financial canonization</li>
-                    <li>2017-present: Immersive experiences and brand partnerships democratizing access</li>
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 class="font-semibold text-lg mb-2">Divergence Between Academic and Popular Reception</h3>
-                  <p class="text-sm leading-relaxed">
-                    While academic reception plateaued around 2000 (having reached near-consensus), popular cultural
-                    engagement has accelerated exponentially. This suggests a bifurcation in how Van Gogh functions
-                    culturally: as a closed subject of art historical inquiry versus an endlessly renewable popular icon.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Data Sources -->
-            <div class="p-6 bg-white rounded-lg shadow">
-              <h2 class="text-2xl font-semibold mb-4">Data Sources & Methodology</h2>
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
-                <div>
-                  <h3 class="font-semibold mb-2">Art Historical Data</h3>
-                  <ul class="space-y-1 text-gray-700">
-                    <li>Exhibition catalogs (MoMA, Van Gogh Museum, Metropolitan Museum)</li>
-                    <li>Academic journals: <em>Burlington Magazine</em>, <em>Art Bulletin</em>, <em>Van Gogh Studies</em></li>
-                    <li>Auction records (Christie's, Sotheby's)</li>
-                    <li>Museum acquisition records</li>
-                    <li>Google Scholar publication counts (estimated)</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 class="font-semibold mb-2">Public Sentiment Data</h3>
-                  <ul class="space-y-1 text-gray-700">
-                    <li>Simulated social media comments (Reddit, Twitter, Instagram)</li>
-                    <li>Museum visitor reviews (aggregated patterns)</li>
-                    <li>Sentiment analysis using natural language processing</li>
-                    <li>Brand collaboration data: <a href="https://www.vangoghmuseum.nl" class="text-blue-600 hover:underline" target="_blank">Van Gogh Museum official sources</a></li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Export for Tableau -->
-            <div class="p-6 bg-white rounded-lg shadow">
-              <h3 class="text-xl font-semibold mb-3">Export Data for Tableau Analysis</h3>
-              <p class="text-sm text-gray-600 mb-4">
-                Download comprehensive datasets for further visualization and analysis in Tableau Desktop or Tableau Public
-              </p>
-              <div class="flex flex-wrap gap-3">
-                <button
-                  @click="exportSentimentData"
-                  class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
-                >
-                  Export Sentiment Data
-                </button>
-                <button
-                  @click="exportHistoricalData"
-                  class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
-                >
-                  Export Historical Reception
-                </button>
-                <button
-                  @click="exportBrandCollabs"
-                  class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
-                >
-                  Export Brand Collaborations
-                </button>
-                <button
-                  @click="exportAllData"
-                  class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
-                >
-                  Export Complete Dataset
-                </button>
-              </div>
-            </div>
-            </div>
+  <!-- Data Sources -->
+  <div class="p-6 bg-white rounded-lg shadow">
+    <h2 class="text-2xl font-semibold mb-4">Data Sources & Methodology</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+      <div>
+        <h3 class="font-semibold mb-2">Art Historical Data</h3>
+        <ul class="space-y-1 text-gray-700">
+          <li>Exhibition catalogs (MoMA, Van Gogh Museum, Metropolitan Museum)</li>
+          <li>Academic journals: <em>Burlington Magazine</em>, <em>Art Bulletin</em>, <em>Van Gogh Studies</em></li>
+          <li>Auction records (Christie's, Sotheby's)</li>
+          <li>Museum acquisition records</li>
+          <li>Google Scholar publication counts (estimated)</li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-2">Public Sentiment Data</h3>
+        <ul class="space-y-1 text-gray-700">
+          <li>Simulated social media comments (Reddit, Twitter, Instagram)</li>
+          <li>Historical popularity tracking (1980-2025)</li>
+          <li>Museum visitor reviews (aggregated patterns)</li>
+          <li>Sentiment analysis using natural language processing</li>
+          <li>Google Trends data (2004-present)</li>
+          <li>Auction price indices and market analysis</li>
+          <li>Brand collaboration data: <a href="https://www.vangoghmuseum.nl" class="text-blue-700 hover:underline" target="_blank">Van Gogh Museum official sources</a></li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <h4>About</h4>
+      <p>
+        This analysis began while building the LEGO Van Gogh Sunflowers set, an official Van Gogh Museum collaboration. The question of how a rejected 19th-century artist ends up on a mass-market toy led to a deeper investigation into 150 years of academic reception, sentiment data, and commercial partnerships. The "Posthumous Popularity Paradox" is the gap between Van Gogh's rejection in life and his cultural dominance in death.
+      </p>
+    </div>
+    <!-- Export for Tableau -->
+  <div class="p-6 bg-white rounded-lg shadow">
+    <h3 class="text-xl font-semibold mb-3">Export Data for Tableau Analysis</h3>
+    <p class="text-sm text-gray-600 mb-4">
+      Download comprehensive datasets for further visualization and analysis in Tableau Desktop or Tableau Public
+    </p>
+    <div class="flex flex-wrap gap-3">
+      <button
+        @click="exportSentimentData"
+        class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+      >
+        Export Sentiment Data
+      </button>
+      <button
+        @click="exportHistoricalData"
+        class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+      >
+        Export Historical Reception
+      </button>
+      <button
+        @click="exportBrandCollabs"
+        class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors"
+      >
+        Export Brand Collaborations
+      </button>
+      <button
+        @click="exportAllData"
+        class="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
+      >
+        Export Complete Dataset
+      </button>
+    </div>
+  </div>
+  </div>
 </template>
 <script>
   export default {

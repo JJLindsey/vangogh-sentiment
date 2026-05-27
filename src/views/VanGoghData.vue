@@ -7,7 +7,7 @@
           <h1 class="main-title">Van Gogh: Public Sentiment vs Art Historical Reception</h1>
           <p class="sub-title">A comparative analysis of popular culture commercialization and academic scholarship</p>
           </div>
-          <button
+          <!-- <button
               @click="showMethodology = !showMethodology"
               class="btn-secondary"
           >
@@ -15,7 +15,7 @@
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
             </svg>
               Methodology
-          </button>
+          </button> -->
         </div>
       </div>
     </header>
@@ -25,7 +25,7 @@
     </div>
 
     <div v-else class="container">
-      <div v-if="showMethodology" class="methodology-modal">
+      <!-- <div v-if="showMethodology" class="methodology-modal">
         <div class="modal-header">
           <h3 class="modal-title">Data Sources & Methodology</h3>
           <button @click="showMethodology = false" class="close-button">X</button>
@@ -62,7 +62,7 @@
             </ul>
           </div>
       </div>
-      </div>
+      </div> -->
         <!-- Summary Stats -->
         <div class="metrics-grid">
         <!-- <div class="metrics-grid"> -->
@@ -137,7 +137,7 @@
               @click="activeTab = 'exports'"
               :class="['tab-button', { active: activeTab === 'exports' }]"
             >
-              Data & Analysis
+              Data & Methodology
             </button>
         </div>
         <div class="tab-content">

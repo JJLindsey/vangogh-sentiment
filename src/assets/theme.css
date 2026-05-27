@@ -75,6 +75,7 @@ button:hover, .button:hover {
 .btn-secondary {
   background: var(--gray-100);
   color: var(--accent-color);
+  font-size: 1.2rem;
 }
 
 .btn-secondary:hover {
@@ -99,8 +100,8 @@ button:hover, .button:hover {
 }
 
 .icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .container {
@@ -118,8 +119,8 @@ button:hover, .button:hover {
 
 .header-content {
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
   gap: var(--spacing-xl);
 }
 

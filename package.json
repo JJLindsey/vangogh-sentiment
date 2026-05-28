@@ -1,6 +1,5 @@
 {
   "name": "vangogh-sentiment",
-  "homepage": "https://jjlindsey.github.io/vangogh-sentiment",
   "version": "0.0.0",
   "private": true,
   "type": "module",

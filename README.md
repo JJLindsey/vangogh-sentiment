@@ -3,7 +3,7 @@
 ### Project Overview
 Fullstack analytical dashboard built with **Vue 3** and **Node.js** to quantify the "Posthumous Popularity Paradox" of Vincent Van Gogh, to show how a commercially unsuccessful 19th-century artist became one of the most recogniable cultural brands of the 21st century. This tool bridges 150 years of academic art-historical research with modern sentiment analysis to visualize how a rejected 19th-century artist became a 21st-century commercial powerhouse.
 
-## Origin
+### Origin
 
 This project started with a LEGO set. While building the LEGO Icons Sunflowers, 
 an official Van Gogh Museum collaboration. I found myself wondering: How did a 
@@ -18,6 +18,8 @@ canonization, which became this dashboard.
 - **Data Visualization:** Chart.js (custom charts) + Tableau Public (embedded dashboard)
 - **NLP:** Sentiment analysis library for processing historical critiques
 - **Environment:** npm run concurrently for unified Fullstack development
+
+### [Live App](https://jjlindsey.github.io/vangogh-sentiment/)
 
 ## Data Sources
 ### Public Sentiment (NLP)

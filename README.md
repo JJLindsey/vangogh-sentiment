@@ -6,7 +6,7 @@ Fullstack analytical dashboard built with **Vue 3** and **Node.js** to quantify 
 ### Origin
 
 This project started with a LEGO set. While building the LEGO Icons Sunflowers, 
-an official Van Gogh Museum collaboration. I found myself wondering: How did a 
+an official Van Gogh Museum collaboration, I found myself wondering: How did a 
 commercially unsuccessful, institutionally rejected artist become the subject of a LEGO 
 product? That question led to a larger one about the mechanics of posthumous cultural 
 canonization, which became this dashboard.
